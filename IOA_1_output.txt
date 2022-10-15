@@ -1,0 +1,11 @@
+path length: 12
+paths: 	4 6 9 10 11 8 7 5 2 1 3 12
+		12 3 1 2 5 7 8 11 10 9 6 4
+path distance: 41.6622
+time: 22706ms
+
+path length: 8
+paths: 	4 6 5 2 1 3 7 8
+		8 7 3 1 2 5 6 4
+path distance: 32.7
+time: 1ms

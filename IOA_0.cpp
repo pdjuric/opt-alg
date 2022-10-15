@@ -9,7 +9,7 @@ public:
     long cnt = 0;
     clock_t dur = 0;
 
-    friend ostream& operator<<(ostream& os, const Stats& dt);
+    friend ostream& operator<<(ostream& os, const Stats& s);
 
 };
 
@@ -86,14 +86,11 @@ public:
 
 
 
-int main_() {
-
+void main_0() {
     Opt* opts[2] = {new OptA(), new OptB()};
 
     for (Opt* opt: opts) opt->run();
     for (Opt* opt: opts) cout << opt->stats << endl;
 
     cout << "The second optimization is faster " << opts[0]->stats.dur / opts[1]->stats.dur << " times." << endl;
-
-    return 0;
 }

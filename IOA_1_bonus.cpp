@@ -50,7 +50,7 @@ public:
 
 };
 
-int main(){
+void main_1_bonus(){
 
     // determine the greatest factorial that fits into 64-bit location
     ullong prevFact = 1, currFact = 2;
