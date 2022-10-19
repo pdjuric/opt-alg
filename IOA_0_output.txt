@@ -1,9 +1,9 @@
 Prices of four products: 0.8 1.25 2.22 3.5
 Number of invocations of the optimization function: 637677170
-Total duration in milliseconds: 3806364
+Total duration in milliseconds: 3058
 
 Prices of four products: 0.8 1.25 2.22 3.5
 Number of invocations of the optimization function: 3270150
-Total duration in milliseconds: 19601
+Total duration in milliseconds: 13
 
-The second optimization is faster 194 times.
+The second optimization is faster 266 times.

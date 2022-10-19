@@ -1,25 +1,26 @@
 #include <cmath>
 #include <iostream>
+#include <cfloat>
 
 using namespace std;
 
-int coord[12][2] = {
-    {620, 584},
-    {575, 560},
-    {517, 560},
-    {679, 196},
-    {577, 421},
-    {542, 291},
-    {460, 451},
-    {347, 451},
-    {457, 251},
-    {347, 264},
-    {284, 317},
-    {334, 605},
+double coord[12][2] = {
+    {62.0, 58.4},
+    {57.5, 56.0},
+    {51.7, 56.0},
+    {67.9, 19.6},
+    {57.7, 42.1},
+    {54.2, 29.1},
+    {46.0, 45.1},
+    {34.7, 45.1},
+    {45.7, 25.1},
+    {34.7, 26.4},
+    {28.4, 31.7},
+    {33.4, 60.5},
 };
 
-int **memo;
-int *currPath, *minPath, *currPrefixCost;
+double **memo, *currPrefixCost;
+int *currPath, *minPath;
 int pathLen, firstChanged;
 
 inline bool nextPath() {
@@ -57,13 +58,13 @@ inline bool nextPath() {
     return true;
 }
 
-inline int distance(int x, int y) {
-    if (memo[x][y]) return memo[x][y];
-    return memo[x][y] = memo[y][x] = (coord[x][0] - coord[y][0]) * (coord[x][0] - coord[y][0]) + (coord[x][1] - coord[y][1])*(coord[x][1] - coord[y][1]);
+inline double distance(int x, int y) {
+    if (memo[x][y] != 0) return memo[x][y];
+    return memo[x][y] = memo[y][x] = sqrt(pow(coord[x][0] - coord[y][0], 2) + pow(coord[x][1] - coord[y][1], 2));
 }
 
-inline int getCost() {
-    int sum = firstChanged ? currPrefixCost[firstChanged-1] : 0;
+inline double getCost() {
+    double sum = firstChanged ? currPrefixCost[firstChanged-1] : 0;
 
     for (int i = firstChanged; i < pathLen; i++)
         if (i > 0) {
@@ -76,16 +77,16 @@ inline int getCost() {
 void findOptimal() {
     currPath = new int[pathLen];
     minPath = new int[pathLen];
-    currPrefixCost = new int[pathLen];
-    memo = new int*[pathLen];
+    currPrefixCost = new double[pathLen];
+    memo = new double*[pathLen];
     firstChanged = 0;
 
     for (int i = 0; i < pathLen; i++){
         currPath[i] = i;
-        memo[i] = new int[pathLen] {};
+        memo[i] = new double[pathLen] {};
     }
 
-    int minCost = ~0U >> 1, currCost;
+    double minCost = DBL_MAX, currCost;
 
     clock_t start = clock();
 
@@ -102,11 +103,11 @@ void findOptimal() {
     clock_t duration = clock() - start;
 
     cout << "path length: " << pathLen << endl;
-    cout <<  "paths: \t";
+    cout << "paths: \t";
     for (int i = 0; i < pathLen; i++) cout << minPath[i] + 1 << " ";
     cout <<  "\n\t\t";
     for (int i = pathLen-1; i >= 0; i--) cout << minPath[i] + 1 << " ";
-    cout << endl << "path distance: " << sqrt(minCost / 100.)  << endl;
+    cout << endl << "path distance: " << minCost << endl;
     cout << "time: " << duration * 1000 / CLOCKS_PER_SEC << "ms" << endl << endl;
 
     delete [] currPath;
@@ -116,7 +117,7 @@ void findOptimal() {
     delete [] memo;
  }
 
-void main_1() {
+int main_1() {
     pathLen = 12;
     findOptimal();
     pathLen = 8;

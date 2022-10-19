@@ -29,7 +29,7 @@ public:
     void run(){
         clock_t start = clock();
         loop();
-        stats.dur = clock() - start;
+        stats.dur = (clock() - start)*1000/CLOCKS_PER_SEC;
         for (int i = 0; i < 4; i++) stats.solution[i] /= 100;
     }
 };
@@ -86,7 +86,7 @@ public:
 
 
 
-void main_0() {
+int main_0() {
     Opt* opts[2] = {new OptA(), new OptB()};
 
     for (Opt* opt: opts) opt->run();
