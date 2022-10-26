@@ -1,0 +1,3 @@
+tree cost: 389
+edges: 	A E - E C - F H - G H - H J - I D - D C - C B - B J
+time: 3918ms
