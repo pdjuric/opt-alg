@@ -37,4 +37,3 @@ int AnnealStats::getCurrentCost() {
 vector<pair<int, int>>& AnnealStats::getPoints() {
     return vals;
 }
-

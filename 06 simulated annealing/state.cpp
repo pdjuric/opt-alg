@@ -10,7 +10,7 @@ State::State() {
 }
 
 void State::calculateCost() {
-    cost = (space_left[1] < 0 || space_left[2] < 0 || space_left[1] == MAX_MEMORY_CAPACITY || space_left[2]  == MAX_MEMORY_CAPACITY)
+    cost = (space_left[1] < 0 || space_left[2] < 0 || space_left[1] == MAX_MEMORY_CAPACITY || space_left[2] == MAX_MEMORY_CAPACITY)
                 ? MAX_COST
                 : space_left[1] + space_left[2];
 }

@@ -1,0 +1,4 @@
+Solution 1: profit - 159990.0, employees - 74
+Solution 2: profit - 159021.0, employees - 84
+Solution 3: not possible
+Solution 4: profit - 132750.0, employees - 73

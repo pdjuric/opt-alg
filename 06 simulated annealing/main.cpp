@@ -1,5 +1,3 @@
-
-
 #include <random>
 #include <iostream>
 #include <thread>
@@ -34,7 +32,7 @@ State* best[20];
 
 
 
- void writeToFile(string filename, vector<pair<int, int>> arr) {
+void writeToFile(string filename, vector<pair<int, int>> arr) {
     ofstream file(filename, ios::out | ios::binary);
     for (auto & p: arr)  {
         file.write((char *) &p.first, sizeof(int));

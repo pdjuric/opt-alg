@@ -1,3 +1,12 @@
+
+// Given the coordinates of PCB holes, find the shortest path do drill
+// - first 8 holes and
+// - all holes.
+//
+// Use complete search to solve the problem.
+// Print the path length and the path itself.
+// The distance between two holes is calculated as the Euclidean distance between their coordinates.
+
 #include <cmath>
 #include <iostream>
 #include <cfloat>
@@ -117,7 +126,7 @@ void findOptimal() {
     delete [] memo;
  }
 
-int main_1() {
+int main() {
     pathLen = 12;
     findOptimal();
     pathLen = 8;

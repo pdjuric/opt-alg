@@ -1,3 +1,17 @@
+
+// A person bought four products. If the prices are expressed in dollars, then the sum and
+// product of all prices (numerically) are the same and amount to $ 7.77. Prices are rounded
+// to $ 0.01 (1 cent).
+//
+// (a) Write a program that performs a complete search by all four prices, and determine the
+// number of calls to the optimization function.
+//
+// (b) Express one price over the others and write a program that performs a complete search
+// by (remaining) three prices. Calculate the maximum number of calls to the optimization
+// function and compare the speed of the program with respect to the program from (a).
+//
+// (c) Which of these two programs is faster?
+
 #include <iostream>
 #include <ctime>
 
@@ -86,7 +100,7 @@ public:
 
 
 
-int main_0() {
+int main() {
     Opt* opts[2] = {new OptA(), new OptB()};
 
     for (Opt* opt: opts) opt->run();

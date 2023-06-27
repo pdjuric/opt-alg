@@ -1,6 +1,3 @@
-// Created by pavle on 30.11.22..
-//
-
 #ifndef IOA1_STATE_H
 #define IOA1_STATE_H
 
@@ -29,10 +26,5 @@ public:
     friend ostream& operator<<(ostream& out, const State& state);
 
 };
-
-
-
-
-
 
 #endif //IOA1_STATE_H

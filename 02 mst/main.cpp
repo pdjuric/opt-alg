@@ -1,3 +1,25 @@
+
+// Ten cities need to be connected by electricity distribution network.
+// - All cities must be connected.
+// - Closed paths (loops) are not allowed.
+// - The cost of connecting each pair of cities is given in the table (the table is symmetrical).
+// - Each connection from one city to four or more cities increases the cost by (g - 3) * 250 units of cost.
+//
+// Find the optimal way to connect cities using complete search (minimize the cost of connection).
+//
+// |     | A   | B   | C   | D   | E   | F   | G   | H   | I   | J   |
+// |:----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+// | A   | 0   | 374 | 350 | 223 | 108 | 178 | 252 | 285 | 240 | 356 |
+// | B   | 374 | 0   | 27  | 166 | 433 | 199 | 135 | 95  | 136 | 17  |
+// | C   | 350 | 27  | 0   | 41  | 52  | 821 | 180 | 201 | 131 | 247 |
+// | D   | 223 | 166 | 41  | 0   | 430 | 47  | 52  | 84  | 40  | 155 |
+// | E   | 108 | 433 | 52  | 430 | 0   | 453 | 478 | 344 | 389 | 423 |
+// | F   | 178 | 199 | 821 | 47  | 453 | 0   | 91  | 37  | 64  | 181 |
+// | G   | 252 | 135 | 180 | 52  | 478 | 91  | 0   | 25  | 83  | 117 |
+// | H   | 285 | 95  | 201 | 84  | 344 | 37  | 25  | 0   | 51  | 42  |
+// | I   | 240 | 136 | 131 | 40  | 389 | 64  | 83  | 51  | 0   | 118 |
+// | J   | 356 | 17  | 247 | 155 | 423 | 181 | 117 | 42  | 118 | 0   |
+
 #include <ctime>
 #include <iostream>
 
@@ -115,7 +137,7 @@ void variations_with_repetition(int n) {
 }
 
 
-int main_2() {
+int main() {
     variations_with_repetition(10);
     return 0;
 }
